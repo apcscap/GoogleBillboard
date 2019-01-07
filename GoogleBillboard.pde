@@ -2,6 +2,7 @@ public final static String e = "2.7182818284590452353602874713526624977572470936
 public void setup()  
 {            
     //your code here 
+    findFirst10PrimeDigits();
 }  
 public void draw()  
 {   
@@ -9,6 +10,19 @@ public void draw()
 }  
 public boolean isPrime(double dNum)  
 {   
-    //your code here   
+    //your code here  
+    if(dNum == 2) return true;
+    for(int i=2;i<=Math.sqrt(dNum);i++)
+    	if(dNum % i == 0)
+    		return false;
     return true;  
-} 
+}
+public void findFirst10PrimeDigits() {
+	for(int i=2;i<e.length()-10;i++) {
+    	String sub = e.substring(i, i+10);
+    	if(isPrime(int(sub))) {
+    		print(sub);
+    		break;
+    	}
+    }
+}
