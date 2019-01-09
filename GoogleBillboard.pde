@@ -11,7 +11,7 @@ public void draw()
 public boolean isPrime(double dNum)  
 {   
     //your code here  
-    if(dNum == 2) return true;
+    if(dNum < 2) return false;
     for(int i=2;i<=Math.sqrt(dNum);i++)
     	if(dNum % i == 0)
     		return false;
@@ -20,9 +20,8 @@ public boolean isPrime(double dNum)
 public void findFirst10PrimeDigits() {
 	for(int i=2;i<e.length()-10;i++) {
     	String sub = e.substring(i, i+10);
-    	if(isPrime(int(sub))) {
+    	if(isPrime(Double.parseDouble(sub))) {
     		print(sub);
-    		break;
     	}
     }
 }
